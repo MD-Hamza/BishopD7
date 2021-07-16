@@ -1,1 +1,0 @@
-class Bish extends Piece {
