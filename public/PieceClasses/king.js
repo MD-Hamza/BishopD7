@@ -1,34 +1,18 @@
 class King extends Piece {
   constructor(x, y, piece, colourWhite) {
     super(x, y, piece, colourWhite);
-    
+     
   }
   allow(movedX, movedY){
-    if (this.colourWhite== true){
-      if(movedX==0){
-        if ((movedY==1 || movedY==2)) {
-          this.legal= true
-        }
-        else {
-          this.legal= false 
-        }
-      }
-      else {
-        this.legal= false 
-      }
+    if ((Math.abs(movedX)==1 && Math.abs(movedY)==1) || (Math.abs(movedX)==1 && Math.abs(movedY)==0)|| (Math.abs(movedX)==0 && Math.abs(movedY)==1)) {
+      this.movesMade+=1
+      return true
     }
-    else {
-      if(movedX==0){
-        if ((movedY==-1 || movedY==-2)) {
-          this.legal= true
-        }
-        else {
-          this.legal= false 
-        }
-      }
-      else {
-        this.legal= false 
-      }
+    else{
+      return false
     }
-    }
+  }
+  wallBlocking(preX, preY, allLis){
+    return false
+  }
 }
