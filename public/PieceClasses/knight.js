@@ -3,7 +3,7 @@ class Knight extends Piece {
     super(x, y, piece, colourWhite);
     
   }
-  allow(movedX, movedY){
+  allow(movedX, movedY, gameBoard){
     if (((Math.abs(movedX)==1 && Math.abs(movedY)==2)||(Math.abs(movedX)==2 && Math.abs(movedY)==1))&& (this.captures==2 ||this.captures==0)){
       return true
     }
